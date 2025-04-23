@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://dyv1luxch4c1d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iljq3"]
+albedo_color = Color(0.586976, 0.438118, 0.68847, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_iljq3"]
+material = SubResource("StandardMaterial3D_iljq3")
+size = Vector3(-2, -0.1, -2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1e1x3"]
+points = PackedVector3Array(-1, -0.05, -1, -1, 0.05, -1, 1, -0.05, -1, -1, -0.05, 1, -1, 0.05, 1, 1, 0.05, -1, 1, -0.05, 1, 1, 0.05, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1e1x3"]
+albedo_color = Color(0.112212, 0, 0.791428, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1e1x3"]
+material = SubResource("StandardMaterial3D_1e1x3")
+size = Vector3(-2, -0.1, -2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e04y0"]
+points = PackedVector3Array(-1, -0.05, -1, -1, 0.05, -1, 1, -0.05, -1, -1, -0.05, 1, -1, 0.05, 1, 1, 0.05, -1, 1, -0.05, 1, 1, 0.05, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0n8qi"]
+albedo_color = Color(0.292797, 0.556997, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_24vsg"]
+material = SubResource("StandardMaterial3D_0n8qi")
+size = Vector3(-2, -0.1, -2)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nihsd"]
+points = PackedVector3Array(-1, -0.05, -1, -1, 0.05, -1, 1, -0.05, -1, -1, -0.05, 1, -1, 0.05, 1, 1, 0.05, -1, 1, -0.05, 1, 1, 0.05, 1)
+
+[node name="libary" type="Node3D"]
+
+[node name="Tile_purple" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_iljq3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tile_purple"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile_purple/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_1e1x3")
+
+[node name="Tile_blue" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_1e1x3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tile_blue"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile_blue/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_e04y0")
+
+[node name="Tile_green" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_24vsg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Tile_green"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tile_green/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_nihsd")
